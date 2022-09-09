@@ -4,38 +4,78 @@ export default function Sidebar() {
 
     return (<>
 
-    <div className="left-area">
-        <div className="top-bar">
-            <div className="search">
-                <span class="material-icons" style={{ position: 'absolute', padding: '0.5rem', color: 'grey' }}>
-                    search
-                </span>
-                <input type='text' placeholder='Search...' />
+        <div className="left-area">
+            <div className="top-bar">
+                <div className="search">
+                    <span class="material-icons" style={{ position: 'absolute', padding: '0.5rem', color: 'grey' }}>
+                        search
+                    </span>
+                    <input type='text' placeholder='Search...' />
+                </div>
+                <div className="accessories">
+                    <span class="material-icons">
+                        notifications
+                    </span>
+                    <span class="material-icons">
+                        email
+                    </span>
+                    <span class="material-icons" style={{ fontSize: '35px' }}>
+                        account_circle
+                    </span>
+                    <span class="material-icons">
+                        apps
+                    </span>
+                </div>
             </div>
-            <div className="accessories">
-                <span class="material-icons">
-                    notifications
-                </span>
-                <span class="material-icons">
-                    email
-                </span>
-                <span class="material-icons" style={{fontSize: '35px'}}>
-                    account_circle
-                </span>
-                <span class="material-icons">
-                    apps
-                </span>
+
+            <h1>Dashboard</h1>
+            <p className="left-head">Home&nbsp;&nbsp;/&nbsp;&nbsp;<a href="/" style={{ color: 'grey', textDecoration: 'none' }}>Dashboard</a></p>
+
+            <div className="data">
+                <div className="data-sales">
+                    <div className="sale">
+                        <p style={{ fontSize: '35px', padding: '0.5rem 0 0 1rem' }}>Sale</p>
+                        <p style={{ color: 'blue', fontWeight: '700', padding: '1rem 1rem 0 0', fontSize: '25px' }}>$613.200</p>
+                    </div>
+                    <div className="layer2-root">
+                        <div className="layer2">
+                            <div className="layer2-data">
+                                <p>Customers</p>
+                                <p>44.725</p>
+                                <p style={{ color: 'red' }}>-12.4% &darr;</p>
+                            </div>
+                            <div className="layer2-logo">
+                                <span class="material-icons" style={{ color: 'blue', fontSize: '30px', border: '1px solid blue', borderRadius: '10px', padding: '3px', backgroundColor: 'lightblue' }}>
+                                    connect_without_contact
+                                </span>
+                            </div>
+                        </div>
+                        <div className="layer2">
+                            <div className="layer2-data">
+                                <p>Orders</p>
+                                <p>385</p>
+                                <p style={{ color: 'blue' }}>17.2% &uarr;</p>
+                            </div>
+                            <div className="layer2-logo">
+                                <span class="material-icons" style={{ color: 'blue', fontSize: '30px', border: '1px solid blue', borderRadius: '10px', padding: '3px', backgroundColor: 'lightblue' }}>
+                                    shopping_cart
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="data-traffic">
+                    <p style={{ fontSize: '30px', padding: '0.5rem 0 0 1rem' }}>Traffic</p>
+                    <p></p>
+                </div>
+            </div>
+            <div className="users">
+
+            </div>
+            <div className="traffic">
+
             </div>
         </div>
-
-        <h1>Dashboard</h1>
-        <p>Dashboard</p>
-    </div>
-
-
-
-
-
 
         <nav>
             <div className="sidebar-icon">

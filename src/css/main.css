@@ -163,5 +163,79 @@ ul li {
 }
 
 .left-area h1 {
-    padding-left: 1rem;
+    padding: 2rem 0 0 2rem;
+}
+
+.left-area .left-head {
+    padding: 0.5rem 0 0 2rem;
+}
+
+.data {
+    padding-top: 2rem;
+    display: flex;
+    width: 95%;
+    margin: auto;
+    height: 60vh;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.data-sales {
+    width: 30%;
+    border-radius: 5px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.data-sales .sale {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    height: 70%;
+    border: none;
+    border-radius: 10px;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.data-sales .layer2-root {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 26%;
+}
+
+.layer2 {
+    width: 47%;
+    display: flex;
+    flex-direction: row;
+    border: none;
+    height: 100%;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.layer2-root .layer2 .layer2-data {
+    display: flex;
+    height: 100%;
+    width: 80%;
+    margin-left: 1rem;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.layer2 .layer2-logo {
+    width: 20%;
+    margin: 1rem 1rem 0 0;
+}
+
+.data-traffic {
+    width: 68%;
+    border-radius: 10px;
+    border: none;
+    height: 100%;
+    background-color: white;
 }
