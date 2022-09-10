@@ -3,7 +3,11 @@ import React from "react";
 export default function Body() {
     const menuClick = () => {
         const element = document.getElementById('sidebar');
+        const element2 = document.getElementById('left-area');
+        const element3 = document.getElementById('menu-topbar');
         element.classList.toggle('nav-handle');
+        element2.classList.toggle('left-area-handle');
+        element3.classList.toggle('menu-handle');
         console.log("lol");
     }
 
@@ -31,9 +35,9 @@ export default function Body() {
     }
     return (<>
 
-        <div className="left-area">
+        <div className="left-area" id='left-area'>
             <div className="top-bar">
-                <span class="material-icons menu" onClick={menuClick}>
+                <span class="material-icons menu" id="menu-topbar" onClick={menuClick}>
                     menu
                 </span>
                 <div className="search">
@@ -49,7 +53,7 @@ export default function Body() {
                     <span class="material-icons">
                         email
                     </span>
-                    <span class="material-icons" style={{ fontSize: '35px' }}>
+                    <span class="material-icons topbar-profile">
                         account_circle
                     </span>
                     <span class="material-icons">
@@ -144,7 +148,7 @@ export default function Body() {
         <nav id="sidebar" className="navbar">
             <div className="sidebar-icon">
                 {/* <p>CORE-UI</p> */}
-                <img src="/img/logo.svg" width='100px' style={{ backgroundColor: 'white', padding: '4px', borderRadius: '10px' }}></img>
+                <img src="/img/logo.svg" width='100px' alt="COREUI" style={{ backgroundColor: 'white', padding: '4px', borderRadius: '10px' }}></img>
                 <span class="material-icons" style={{ color: 'grey' }} onClick={menuClick}>arrow_back_ios</span>
             </div>
             <div className="dashboard sidebar-title">
@@ -157,7 +161,6 @@ export default function Body() {
                     justifyContent: 'center',
                     color: 'rgba(255, 255, 255, 0.87)',
                     padding: '2px',
-                    margin: '2rem',
                     width: '2.5rem',
                     height: '1.5rem',
                     backgroundColor: '#2e8ae6',
@@ -171,38 +174,62 @@ export default function Body() {
             <div className="components">
                 <p className="sidebar-title sub-title">COMPONENTS</p>
                 <ul>
-                    <li><span class="material-icons">
+                    <li className="list-items-root"><span class="material-icons">
                         extension
-                    </span>Base<span class="material-icons" id="dropdown-1" className="dropdown-items" onClick={() => dropdownClick(1)}>
+                    </span>Base<span class="material-icons" onClick={() => dropdownClick(1)}>
                             keyboard_arrow_down
                         </span></li>
-                        <li>1</li>
-                        <li>1</li>
-                        <li>1</li>
-                        <li>1</li>
-                        <li>1</li>
-                        <li>1</li>
-                    <li><span class="material-icons">
+                    <ol className="dropdown-items" id="dropdown-1">
+                        <li className="dropdown-li-items">Accordian</li>
+                        <li className="dropdown-li-items">Breadcrumb</li>
+                        <li className="dropdown-li-items">Cards</li>
+                        <li className="dropdown-li-items">Carousel</li>
+                        <li className="dropdown-li-items">List group</li>
+                        <li className="dropdown-li-items">Navs & Tabs</li>
+                    </ol>
+                    <li className="list-items-root"><span class="material-icons">
                         near_me
-                    </span>Buttons<span class="material-icons dropdown-items" id="dropdown-2" onClick={() => dropdownClick(2)}>
+                    </span>Buttons<span class="material-icons" onClick={() => dropdownClick(2)}>
                             keyboard_arrow_down
                         </span></li>
-                    <li><span class="material-icons">
+                    <ol id="dropdown-2" className="dropdown-items">
+                        <li className="dropdown-li-items">Buttons</li>
+                        <li className="dropdown-li-items">Button Group</li>
+                        <li className="dropdown-li-items">Dropdowns</li>
+                    </ol>
+                    <li className="list-items-root"><span class="material-icons">
                         feed
-                    </span>Forms<span class="material-icons dropdown-items" id="dropdown-3" onClick={() => dropdownClick(3)}>
+                    </span>Forms<span class="material-icons" onClick={() => dropdownClick(3)}>
                             keyboard_arrow_down
                         </span></li>
-                    <li><span class="material-icons">
+                    <ol className='dropdown-items' id="dropdown-3">
+                        <li className="dropdown-li-items">Form Control</li>
+                        <li className="dropdown-li-items">Select</li>
+                        <li className="dropdown-li-items">Multi Select</li>
+                        <li className="dropdown-li-items">Range</li>
+                    </ol>
+                    <li className="list-items-root"><span class="material-icons">
                         star_border
-                    </span>Icons<span class="material-icons dropdown-items" id="dropdown-4" onClick={() => dropdownClick(4)}>
+                    </span>Icons<span class="material-icons" onClick={() => dropdownClick(4)}>
                             keyboard_arrow_down
                         </span></li>
-                    <li><span class="material-icons">
+                    <ol id="dropdown-4" className='dropdown-items'>
+                        <li className="dropdown-li-items">Coreui Icons</li>
+                        <li className="dropdown-li-items">Coreui Icons - Brand</li>
+                        <li className="dropdown-li-items">Coreui Icons - Flag</li>
+                    </ol>
+                    <li className="list-items-root"><span class="material-icons">
                         notifications
-                    </span>Notifications<span class="material-icons dropdown-items" id="dropdown-5" onClick={() => dropdownClick(5)}>
+                    </span>Notifications<span class="material-icons" onClick={() => dropdownClick(5)}>
                             keyboard_arrow_down
                         </span></li>
-                    <li><span class="material-icons">
+                    <ol id="dropdown-5" className="dropdown-items">
+                        <li className="dropdown-li-items">Alerts</li>
+                        <li className="dropdown-li-items">Badge</li>
+                        <li className="dropdown-li-items">Modals</li>
+                        <li className="dropdown-li-items">Toasts</li>
+                    </ol>
+                    <li className="list-items-root"><span class="material-icons">
                         widgets
                     </span>Widgets<p style={{
                         display: 'flex',
@@ -223,16 +250,16 @@ export default function Body() {
             <div className="plugins">
                 <p className="sidebar-title sub-title">PLUGINS</p>
                 <ul>
-                    <li><span class="material-icons">
+                    <li className="list-items-root"><span class="material-icons">
                         calendar_month
                     </span>Calender</li>
-                    <li><span class="material-icons">
+                    <li className="list-items-root"><span class="material-icons">
                         pie_chart
                     </span>Charts</li>
-                    <li><span class="material-icons">
+                    <li className="list-items-root"><span class="material-icons">
                         analytics
                     </span>DataTables</li>
-                    <li><span class="material-icons">
+                    <li className="list-items-root"><span class="material-icons">
                         map
                     </span>Google Maps</li>
                 </ul>
@@ -240,13 +267,13 @@ export default function Body() {
             <div className="extras">
                 <p className="sidebar-title sub-title">EXTRAS</p>
                 <ul>
-                    <li><span class="material-icons">
+                    <li className="list-items-root"><span class="material-icons">
                         grade
                     </span>Pages</li>
-                    <li><span class="material-icons">
+                    <li className="list-items-root"><span class="material-icons">
                         apps
                     </span>Apps</li>
-                    <li><span class="material-icons">
+                    <li className="list-items-root"><span class="material-icons">
                         description
                     </span>Docs</li>
                 </ul>

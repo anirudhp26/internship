@@ -5,10 +5,13 @@
 }
 
 .material-icons {
+    cursor: pointer;
+    user-select: none;
     font-family: 'Material Icons';
     font-weight: normal;
     font-style: normal;
-    font-size: 25px;  /* Preferred icon size */
+    font-size: 25px;
+    /* Preferred icon size */
     display: inline-block;
     line-height: 1;
     text-transform: none;
@@ -16,27 +19,31 @@
     word-wrap: normal;
     white-space: nowrap;
     direction: ltr;
-  
+
     /* Support for all WebKit browsers. */
     -webkit-font-smoothing: antialiased;
     /* Support for Safari and Chrome. */
     text-rendering: optimizeLegibility;
-  
+
     /* Support for Firefox. */
     -moz-osx-font-smoothing: grayscale;
-  
+
     /* Support for IE. */
     font-feature-settings: 'liga';
-  }
+}
 
 body {
     background-color: #e9edef;
     font-family: 'Source Sans Pro', sans-serif;
 }
 
+.nav-handle {
+    left: -100% !important;
+}
 
-nav {
+.navbar {
     width: 17%;
+    min-width: 200px;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -47,9 +54,12 @@ nav {
     position: fixed;
     overflow: hidden;
     overflow-y: auto;
+    z-index: 2 !important;
+    left: 0%;
+    transition: 0.5s;
 }
 
-nav::-webkit-scrollbar {
+.navbar::-webkit-scrollbar {
     display: none;
 }
 
@@ -76,6 +86,7 @@ nav::-webkit-scrollbar {
     display: flex;
     align-items: center;
     padding-left: 1rem;
+    margin: 1rem auto;
     width: 100%;
     justify-content: flex-start;
     height: 2.5rem;
@@ -93,7 +104,9 @@ nav::-webkit-scrollbar {
     font-weight: 900;
 }
 
-.components, .plugins, .extras {
+.components,
+.plugins,
+.extras {
     width: 100%;
 }
 
@@ -101,12 +114,13 @@ ul {
     display: flex;
     width: 100%;
     margin: auto;
+    height: fit-content;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-ul li {
+ul .list-items-root {
     width: 100%;
     height: 3rem;
     padding: 1rem 1rem;
@@ -128,6 +142,7 @@ ul li:hover {
     width: 83%;
     left: 17%;
     flex-direction: column;
+    transition: 0.5s;
 }
 
 .top-bar {
@@ -153,6 +168,7 @@ ul li:hover {
     height: 60%;
     width: 90%;
     padding-left: 3rem;
+    outline: none;
     border: none;
     border-radius: 6px;
     background-color: #e9edef;
@@ -260,7 +276,7 @@ ul li:hover {
     justify-content: space-between;
     width: 95%;
     margin: 1rem auto;
-    height: 70vh;    
+    height: 70vh;
 }
 
 .user-root {
@@ -279,7 +295,7 @@ ul li:hover {
 
 .user-root button {
     display: flex;
-    margin: 1rem 1rem  0 0;
+    margin: 1rem 1rem 0 0;
     width: 9rem;
     height: 3rem;
     border: none;
@@ -302,12 +318,14 @@ ul li:hover {
     justify-content: space-between;
 }
 
-.user-tabs .div-1, .user-tabs .div-2, .user-tabs .div-3 {
+.user-tabs .div-1,
+.user-tabs .div-2,
+.user-tabs .div-3 {
     border: none;
     border-radius: 10px;
     width: 100%;
     height: 31%;
-    padding: 1rem  0 0 1rem;
+    padding: 1rem 0 0 1rem;
     color: white;
     font-weight: 500;
     font-size: 20px;
@@ -355,7 +373,10 @@ ul li:hover {
     align-items: center;
 }
 
-.clients .section-1, .clients .section-2, .clients .section-3, .clients .section-4 {
+.clients .section-1,
+.clients .section-2,
+.clients .section-3,
+.clients .section-4 {
     width: 25%;
     flex-wrap: wrap;
 }
@@ -364,14 +385,17 @@ ul li:hover {
     border-left: 4px solid rgb(77, 211, 255);
     padding-left: 1rem;
 }
+
 .clients .section-2 {
     border-left: 4px solid rgb(255, 82, 82);
     padding-left: 1rem;
 }
+
 .clients .section-3 {
     border-left: 4px solid rgb(255, 255, 116);
     padding-left: 1rem;
 }
+
 .clients .section-4 {
     border-left: 4px solid rgb(105, 255, 105);
     padding-left: 1rem;
@@ -379,34 +403,60 @@ ul li:hover {
 
 .menu {
     display: none;
+    padding-right: 2rem;
+}
+
+.menu-handle {
+    display: flex !important;
+}
+
+.left-area-handle {
+    width: 100%;
+    left: 0;
 }
 
 .dropdown-items {
-    z-index: -1;
-    top: -100%;
-    transition: top 0.5s;
+    /* display: none; */
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s;
+}
+
+.dropdown-items .dropdown-li-items {
+    width: 100% !important;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
 }
 
 .dropdown-handle {
-    z-index: 1 !important;
-    top: 0%;
+    display: flex;
+    max-height: 100vh;
+    flex-direction: column;
 }
 
-@media only screen and (max-width: 920px) {
+.topbar-profile {
+    font-size: 35px;
+}
 
-    .menu{
+@media only screen and (max-width: 1120px) {
+
+    .menu {
         display: flex;
         justify-content: center;
     }
 
-    nav {
-        width: 60vw;
+    .navbar {
+        width: 40vw;
+        min-height: 540px;
         left: -100%;
         transition: left 0.5s;
     }
 
     .nav-handle {
-        left: 0%;
+        left: 0% !important;
     }
 
     .left-area {
@@ -423,13 +473,23 @@ ul li:hover {
     .data-sales {
         width: 100%;
         height: 100%;
+        align-items: center;
     }
 
     .data-traffic {
         width: 100%;
+        align-items: center;
     }
+
     .data-sales .sale {
         width: 100%;
+        display: flex;
+        min-height: 10vh;
+        align-items: center;
+    }
+
+    .sale p {
+        padding: 0;
     }
 
     .data-sales .layer2-root {
@@ -437,10 +497,17 @@ ul li:hover {
         width: 100%;
     }
 
+    .layer2 .layer2-logo {
+        display: flex;
+        align-items: center;
+        margin: 0;
+    }
+
     .layer2-root .layer2 {
-        margin: 0.5rem auto !important;
-        padding: 1rem  0 0 1rem !important;
+        margin: 1rem auto !important;
         width: 100%;
+        min-height: 15vh;
+        align-items: center;
     }
 
     .users {
@@ -449,7 +516,7 @@ ul li:hover {
 
     .users .user-root {
         width: 100%;
-        margin: 1rem  auto;
+        margin: 1rem auto;
     }
 
     .users .user-tabs {
@@ -460,20 +527,26 @@ ul li:hover {
         display: flex;
         justify-content: space-between;
         width: 100%;
-    }    
+    }
 
-    .top-bar .search, .top-bar .accessories {
+    .top-bar .search,
+    .top-bar .accessories {
         width: 45%;
         display: flex;
         justify-content: center;
     }
+}
+
+@media only screen and (max-width: 500px) {
+
+    .top-bar .accessories .material-icons,
+    .topbar-profile {
+        font-size: 20px;
+        padding: 3px;
+    }
 
     .top-bar .accessories {
         flex-wrap: wrap;
+        width: 50%;
     }
-
-    .top-bar .accessories .material-icons {
-        font-size: 1rem;
-    }
-
 }
