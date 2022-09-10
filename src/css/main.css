@@ -44,11 +44,18 @@ nav {
     /* justify-content: center; */
     color: #9da5b1;
     background-color: #252e3e;
+    position: fixed;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+nav::-webkit-scrollbar {
+    display: none;
 }
 
 .sidebar-icon {
     background-color: #1d2430;
-    height: 10vh;
+    padding: 1.5rem 0;
     width: 100%;
     display: flex;
     font-size: 20px;
@@ -107,6 +114,12 @@ ul li {
     align-items: center;
     grid-template-columns: 20% 60% 20%;
     place-content: center;
+    transition: all 0.5s;
+    z-index: 1 !important;
+}
+
+ul li:hover {
+    background-color: #13223c;
 }
 
 .left-area {
@@ -174,7 +187,7 @@ ul li {
     padding-top: 2rem;
     display: flex;
     width: 95%;
-    margin: auto;
+    margin: 2rem auto;
     height: 60vh;
     flex-direction: row;
     justify-content: space-between;
@@ -183,7 +196,7 @@ ul li {
 .data-sales {
     width: 30%;
     border-radius: 5px;
-    height: 100%;
+    height: 60vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -236,6 +249,231 @@ ul li {
     width: 68%;
     border-radius: 10px;
     border: none;
-    height: 100%;
+    height: 60vh;
     background-color: white;
+}
+
+
+.users {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 95%;
+    margin: 1rem auto;
+    height: 70vh;    
+}
+
+.user-root {
+    display: flex;
+    width: 70%;
+    height: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.user-root p {
+    margin: 1rem 0 0 1rem;
+}
+
+.user-root button {
+    display: flex;
+    margin: 1rem 1rem  0 0;
+    width: 9rem;
+    height: 3rem;
+    border: none;
+    border-radius: 5px;
+    align-items: center;
+    padding-left: 1rem;
+    background-color: #ededed;
+    transition: background-color 0.5s;
+}
+
+.user-root button:hover {
+    background-color: #bcbebf;
+}
+
+.user-tabs {
+    width: 28%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.user-tabs .div-1, .user-tabs .div-2, .user-tabs .div-3 {
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    height: 31%;
+    padding: 1rem  0 0 1rem;
+    color: white;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.user-tabs .div-1 {
+    background-color: #2e8ae6;
+}
+
+.user-tabs .div-2 {
+    background-color: #e6b800;
+}
+
+.user-tabs .div-3 {
+    background-color: #d73263;
+}
+
+.traffic {
+    width: 95%;
+    height: 70vh;
+    margin: 1rem auto;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.traffic .traffic-head {
+    font-size: 35px;
+    padding: 1rem 0 0 1rem;
+}
+
+.traffic .traffic-time {
+    color: grey;
+    padding: 0 0 0 1rem;
+}
+
+.traffic .clients {
+    display: flex;
+    width: 97%;
+    height: 20%;
+    margin: 1rem auto;
+    flex-direction: row;
+    border-top: 1px solid rgb(195, 195, 195);
+    border-bottom: 1px solid rgb(195, 195, 195);
+    justify-content: space-between;
+    align-items: center;
+}
+
+.clients .section-1, .clients .section-2, .clients .section-3, .clients .section-4 {
+    width: 25%;
+    flex-wrap: wrap;
+}
+
+.clients .section-1 {
+    border-left: 4px solid rgb(77, 211, 255);
+    padding-left: 1rem;
+}
+.clients .section-2 {
+    border-left: 4px solid rgb(255, 82, 82);
+    padding-left: 1rem;
+}
+.clients .section-3 {
+    border-left: 4px solid rgb(255, 255, 116);
+    padding-left: 1rem;
+}
+.clients .section-4 {
+    border-left: 4px solid rgb(105, 255, 105);
+    padding-left: 1rem;
+}
+
+.menu {
+    display: none;
+}
+
+.dropdown-items {
+    z-index: -1;
+    top: -100%;
+    transition: top 0.5s;
+}
+
+.dropdown-handle {
+    z-index: 1 !important;
+    top: 0%;
+}
+
+@media only screen and (max-width: 920px) {
+
+    .menu{
+        display: flex;
+        justify-content: center;
+    }
+
+    nav {
+        width: 60vw;
+        left: -100%;
+        transition: left 0.5s;
+    }
+
+    .nav-handle {
+        left: 0%;
+    }
+
+    .left-area {
+        left: 0%;
+        width: 100%;
+    }
+
+    .data {
+        flex-direction: column;
+        height: max-content;
+        align-items: center;
+    }
+
+    .data-sales {
+        width: 100%;
+        height: 100%;
+    }
+
+    .data-traffic {
+        width: 100%;
+    }
+    .data-sales .sale {
+        width: 100%;
+    }
+
+    .data-sales .layer2-root {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .layer2-root .layer2 {
+        margin: 0.5rem auto !important;
+        padding: 1rem  0 0 1rem !important;
+        width: 100%;
+    }
+
+    .users {
+        flex-direction: column;
+    }
+
+    .users .user-root {
+        width: 100%;
+        margin: 1rem  auto;
+    }
+
+    .users .user-tabs {
+        width: 100%;
+    }
+
+    .top-bar {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }    
+
+    .top-bar .search, .top-bar .accessories {
+        width: 45%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .top-bar .accessories {
+        flex-wrap: wrap;
+    }
+
+    .top-bar .accessories .material-icons {
+        font-size: 1rem;
+    }
+
 }
